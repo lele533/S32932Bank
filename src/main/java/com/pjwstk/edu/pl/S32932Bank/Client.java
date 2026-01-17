@@ -5,6 +5,7 @@ public class Client {
     private String surname;
     private String ClientID;
     private int moneyOnAccount;
+    private int initialBalance;
 
     public Client(String name, String surname, String ClientID, int moneyOnAccount) {
         this.name = name;
@@ -44,6 +45,12 @@ public class Client {
 
     public void setMoneyOnAccount(int moneyOnAccount) {
         this.moneyOnAccount = moneyOnAccount;
+    }
+    public int getInitialBalance() {
+        return initialBalance;
+    }
+    public void setInitialBalance(int initialBalance) {
+        this.initialBalance = initialBalance;
     }
 
     @Override

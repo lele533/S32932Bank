@@ -20,7 +20,7 @@ class BankServiceTest {
     }
 
     @Test
-    void registerClient_addsClientToStorage() {
+    void registerClientTestTrue() {
         bankService.registerClient("Adam", "Nowak", "10", 500);
 
         assertEquals(1, clientStorage.getClients().size());
@@ -29,7 +29,7 @@ class BankServiceTest {
     }
 
     @Test
-    void registerClient_throws_whenClientAlreadyExists() {
+    void registerClientWithTheSameId() {
         bankService.registerClient("Adam", "Nowak", "10", 500);
 
         assertThrows(RuntimeException.class,
@@ -37,7 +37,7 @@ class BankServiceTest {
     }
 
     @Test
-    void transfer_declined_whenClientNotRegistered() {
+    void transferDeclinedWhenClientNotExist() {
         TransactionResult result = bankService.transfer("999", 100);
 
         assertEquals(TransactionStatus.DECLINED, result.getStatus());
@@ -45,7 +45,7 @@ class BankServiceTest {
     }
 
     @Test
-    void transfer_declined_whenInsufficientFunds() {
+    void transferDeclinedWhenInsufficientFunds() {
         bankService.registerClient("Adam", "Nowak", "10", 50);
 
         TransactionResult result = bankService.transfer("10", 100);
@@ -55,7 +55,7 @@ class BankServiceTest {
     }
 
     @Test
-    void transfer_accepted_decreasesBalance() {
+    void transferTestWhereEverythingIsOk() {
         bankService.registerClient("Adam", "Nowak", "10", 500);
 
         TransactionResult result = bankService.transfer("10", 200);
@@ -66,7 +66,7 @@ class BankServiceTest {
     }
 
     @Test
-    void deposit_declined_whenClientNotRegistered() {
+    void depositDeclinedWhenClientNotRegistered() {
         TransactionResult result = bankService.deposit("999", 100);
 
         assertEquals(TransactionStatus.DECLINED, result.getStatus());
@@ -75,7 +75,7 @@ class BankServiceTest {
 
 
     @Test
-    void getClient_throws_whenNotRegistered() {
+    void getClientThrowsWhenNotRegistered() {
         assertThrows(RuntimeException.class, () -> bankService.getClient("999"));
     }
 }

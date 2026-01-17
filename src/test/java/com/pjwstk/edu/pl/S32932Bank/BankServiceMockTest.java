@@ -20,7 +20,7 @@ class BankServiceMockTest {
     BankService bankService;
 
     @Test
-    void transfer_declined_whenClientNotRegistered() {
+    void transferToClientNotRegistered() {
 
         when(clientStorage.getClients()).thenReturn(new ArrayList<>());
 
