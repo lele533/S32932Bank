@@ -6,7 +6,7 @@ public class Client {
     private String ClientID;
     private int moneyOnAccount;
 
-    public Client(String name, String surname, String ClientID , int  moneyOnAccount) {
+    public Client(String name, String surname, String ClientID, int moneyOnAccount) {
         this.name = name;
         this.surname = surname;
         this.ClientID = ClientID;

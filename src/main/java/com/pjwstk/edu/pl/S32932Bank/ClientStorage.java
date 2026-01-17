@@ -1,6 +1,7 @@
 package com.pjwstk.edu.pl.S32932Bank;
 
 import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,9 +17,11 @@ public class ClientStorage {
         clients.add(new Client("Jan", "Kowalski", "4", 4000));
 
     }
+
     public List<Client> getClients() {
         return clients;
     }
+
     public void setClients(List<Client> clients) {
         this.clients = clients;
     }

@@ -9,9 +9,20 @@ public class TransactionResult {
         this.status = status;
         this.newBalance = newBalance;
         this.message = message;
+
     }
 
-    public TransactionStatus getStatus() { return status; }
-    public int getNewBalance() { return newBalance; }
-    public String getMessage() { return message; }
+    public TransactionStatus getStatus() {
+        return status;
+    }
+
+    public int getNewBalance() {
+        return newBalance;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+
 }
